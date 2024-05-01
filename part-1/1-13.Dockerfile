@@ -6,7 +6,7 @@ EXPOSE 8080
 
 # 1.14 setup environment
 ENV PORT=8080
-ENV REQUEST_ORIGIN="http://localhost:5000"
+ENV REQUEST_ORIGIN="http://localhost"
 
 # copy project files to the container
 WORKDIR /usr/src/app

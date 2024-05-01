@@ -5,7 +5,8 @@ FROM node:16
 EXPOSE 5000
 
 # 1.14 setup environment
-ENV REACT_APP_BACKEND_URL="http://localhost:8080"
+# 2.9 change the url
+ENV REACT_APP_BACKEND_URL="http://localhost/api"
 
 # copy project files to the container
 WORKDIR /usr/src/app
