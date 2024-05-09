@@ -8,19 +8,19 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./part-3/express-app
     steps:
+      # get access to the repository
+      - uses: actions/checkout@v4
       # ...
       - name: Login to Docker Hub
-        uses: docker/login-action@v1
+        uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       # ...
       - name: Build & Push Image
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
+          context: ./part-3/express-app
           push: true
           tags: leevihalme/devopswd-express-app:latest
